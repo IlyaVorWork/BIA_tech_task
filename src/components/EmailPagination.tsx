@@ -3,14 +3,16 @@ import {LuChevronLeft, LuChevronRight} from "react-icons/lu";
 import {FunctionComponent} from "react";
 import {PageChangeDetails} from "@zag-js/pagination";
 
-interface EmailGridPaginationProps {
-  rowsCount: number;
+interface PaginationProps {
+  count: number;
+  pageSize: number;
+  defaultPage: number;
   onPageChange: (details: PageChangeDetails) => void;
 }
 
-const EmailGridPagination: FunctionComponent<EmailGridPaginationProps> = ({rowsCount, onPageChange}) => {
+const EmailPagination: FunctionComponent<PaginationProps> = ({count, pageSize, defaultPage, onPageChange}) => {
   return (
-    <Pagination.Root count={rowsCount} pageSize={14} defaultPage={1} onPageChange={onPageChange}>
+    <Pagination.Root count={count} pageSize={pageSize} defaultPage={defaultPage} onPageChange={onPageChange}>
       <ButtonGroup variant="ghost" size="xs">
         <Pagination.PrevTrigger asChild>
           <IconButton>
@@ -40,4 +42,4 @@ const EmailGridPagination: FunctionComponent<EmailGridPaginationProps> = ({rowsC
   )
 }
 
-export default EmailGridPagination;
+export default EmailPagination;

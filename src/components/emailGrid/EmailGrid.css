@@ -1,0 +1,12 @@
+.ag-row-hover .theme-cell {
+    color: #1C1D1E !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.ag-row-hover {
+    cursor: pointer;
+}
+
+.ag-row-hover::before {
+    transition: all 0.3s ease-in-out;
+}

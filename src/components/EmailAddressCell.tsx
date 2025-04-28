@@ -16,7 +16,7 @@ const EmailAddressCell: FunctionComponent<EmailCellProps> = ({value, variant}) =
 
   return (
     <Box style={{ color: "#7B7B7B", fontSize: "0.875rem"}}>
-      <Highlight query={value} styles={{ color: "#3182CE" }}>
+      <Highlight query={value} styles={{ color: "#3182CE", fontSize: "0.875rem" }}>
         {displayValue}
       </Highlight>
     </Box>

@@ -1,221 +1,314 @@
 export interface Email {
-  theme: string;
+  subject: string;
+  text?: string;
   date: Date;
   from: string;
+  fromName: string;
   to: string;
+  toName: string;
   attachments: number;
   messages?: null;
 }
 
 export const mockEmails: Email[] = [
   {
-    theme: "Доставка оборудования Москва - Казань",
-    date: new Date('2023-05-15T09:30:00'),
-    from: 'ivanov.i@company.ru',
-    to: 'petrov.a@logistics.com',
-    attachments: 2
+    "subject": "Доставка оборудования Москва - Казань",
+    "date": new Date('2023-05-15T09:30:00'),
+    "from": "ivanov.i@company.ru",
+    "to": "petrov.a@logistics.com",
+    "fromName": "Иванов Иван Иванович",
+    "toName": "Петров Алексей Сергеевич",
+    "attachments": 2,
+    "text": "Уважаемый Алексей Петров, направляем вам информацию по доставке оборудования из Москвы в Казань. Пожалуйста, подтвердите получение и готовность принять груз 20 мая."
   },
   {
-    theme: "Перевозка мебели СПб - Сочи",
-    date: new Date('2023-06-22T14:45:00'),
-    from: 'sidorova.m@mail.ru',
-    to: 'kuznetsov.v@transport.org',
-    attachments: 5
+    "subject": "Перевозка мебели СПб - Сочи",
+    "date": new Date('2023-06-22T14:45:00'),
+    "from": "sidorova.m@mail.ru",
+    "to": "kuznetsov.v@transport.org",
+    "fromName": "Сидорова Мария Олеговна",
+    "toName": "Кузнецов Владимир Петрович",
+    "attachments": 5,
+    "text": "Добрый день, Владимир. Просим организовать перевозку мебели из Санкт-Петербурга в Сочи. В приложении все необходимые документы и спецификации груза."
   },
   {
-    theme: "Грузоперевозки Екатеринбург - Новосибирск",
-    date: new Date('2023-07-10T11:20:00'),
-    from: 'freight@ural-trans.ru',
-    to: 'logistics@siblogist.ru',
-    attachments: 3
+    "subject": "Грузоперевозки Екатеринбург - Новосибирск",
+    "date": new Date('2023-07-10T11:20:00'),
+    "from": "freight@ural-trans.ru",
+    "to": "logistics@siblogist.ru",
+    "fromName": "Смирнов Дмитрий Васильевич",
+    "toName": "Федорова Анна Михайловна",
+    "attachments": 3,
+    "text": "Уважаемые коллеги, предлагаем вам сотрудничество по грузоперевозкам между Екатеринбургом и Новосибирском. Наши условия и тарифы прилагаются."
   },
   {
-    theme: "Экспресс-доставка документов Москва - Ростов",
-    date: new Date('2023-08-05T16:10:00'),
-    from: 'express@delivery.ru',
-    to: 'manager@rostov-company.com',
-    attachments: 1
+    "subject": "Экспресс-доставка документов Москва - Ростов",
+    "date": new Date('2023-08-05T16:10:00'),
+    "from": "express@delivery.ru",
+    "to": "manager@rostov-company.com",
+    "fromName": "Козлов Артем Игоревич",
+    "toName": "Морозова Елена Викторовна",
+    "attachments": 1,
+    "text": "Срочная доставка документов в Ростов будет выполнена завтра к 12:00. Трек-номер для отслеживания прилагается."
   },
   {
-    theme: "Транспортировка холодильников Самара - Воронеж",
-    date: new Date('2023-09-18T10:00:00'),
-    from: 'refrigerator.transport@cold.ru',
-    to: 'voronezh.warehouse@storage.com',
-    attachments: 4
+    "subject": "Транспортировка холодильников Самара - Воронеж",
+    "date": new Date('2023-09-18T10:00:00'),
+    "from": "refrigerator.transport@cold.ru",
+    "to": "voronezh.warehouse@storage.com",
+    "fromName": "Белов Павел Андреевич",
+    "toName": "Григорьев Сергей Николаевич",
+    "attachments": 4,
+    "text": "Уведомляем о планируемой транспортировке партии холодильников 25 сентября. Просим подготовить склад к приему груза."
   },
   {
-    theme: "Междугородние перевозки Нижний Новгород - Краснодар",
-    date: new Date('2023-10-30T13:25:00'),
-    from: 'nn-transport@mail.ru',
-    to: 'krasnodar.logist@kuban.ru',
-    attachments: 7
+    "subject": "Междугородние перевозки Нижний Новгород - Краснодар",
+    "date": new Date('2023-10-30T13:25:00'),
+    "from": "nn-transport@mail.ru",
+    "to": "krasnodar.logist@kuban.ru",
+    "fromName": "Тихонов Олег Владимирович",
+    "toName": "Соколова Ирина Дмитриевна",
+    "attachments": 7,
+    "text": "Добрый день! Просим рассмотреть возможность организации регулярных грузоперевозок по маршруту Н.Новгород-Краснодар. Подробности в приложении."
   },
   {
-    theme: "Доставка строительных материалов Москва - Калининград",
-    date: new Date('2023-11-12T08:40:00'),
-    from: 'stroy.mat@build.com',
-    to: 'kaliningrad.remont@dom.ru',
-    attachments: 6
+    "subject": "Доставка строительных материалов Москва - Калининград",
+    "date": new Date('2023-11-12T08:40:00'),
+    "from": "stroy.mat@build.com",
+    "to": "kaliningrad.remont@dom.ru",
+    "fromName": "Михайлов Андрей Сергеевич",
+    "toName": "Зайцева Татьяна Ивановна",
+    "attachments": 6,
+    "text": "Уважаемые партнеры, подтверждаем заказ на доставку строительных материалов в Калининград. Отгрузка запланирована на 15 ноября."
   },
   {
-    theme: "Перевозка автомобильных запчастей Тольятти - Уфа",
-    date: new Date('2023-12-03T12:15:00'),
-    from: 'auto.parts@tolyatti.ru',
-    to: 'ufa.garage@service.com',
-    attachments: 3
+    "subject": "Перевозка автомобильных запчастей Тольятти - Уфа",
+    "date": new Date('2023-12-03T12:15:00'),
+    "from": "auto.parts@tolyatti.ru",
+    "to": "ufa.garage@service.com",
+    "fromName": "Громов Алексей Викторович",
+    "toName": "Николаев Денис Олегович",
+    "attachments": 3,
+    "text": "Направляем вам информацию по перевозке запчастей из Тольятти в Уфу. Груз будет готов к отгрузке 10 декабря."
   },
   {
-    theme: "Доставка продуктов питания Москва - Владивосток",
-    date: new Date('2024-01-20T07:50:00'),
-    from: 'food.delivery@market.ru',
-    to: 'vladivostok.store@far-east.com',
-    attachments: 8
+    "subject": "Доставка продуктов питания Москва - Владивосток",
+    "date": new Date('2024-01-20T07:50:00'),
+    "from": "food.delivery@market.ru",
+    "to": "vladivostok.store@far-east.com",
+    "fromName": "Ковалева Ольга Александровна",
+    "toName": "Лебедев Максим Игоревич",
+    "attachments": 8,
+    "text": "Уведомляем о начале регулярных поставок продуктов питания во Владивосток. Первая партия будет отправлена 25 января."
   },
   {
-    theme: "Транспортировка промышленного оборудования Челябинск - Пермь",
-    date: new Date('2024-02-14T15:30:00'),
-    from: 'industry@chel-mash.ru',
-    to: 'perm.engineering@tech.com',
-    attachments: 5
+    "subject": "Транспортировка промышленного оборудования Челябинск - Пермь",
+    "date": new Date('2024-02-14T15:30:00'),
+    "from": "industry@chel-mash.ru",
+    "to": "perm.engineering@tech.com",
+    "fromName": "Сорокин Игорь Васильевич",
+    "toName": "Панова Екатерина Сергеевна",
+    "attachments": 5,
+    "text": "Просим организовать транспортировку промышленного оборудования в Пермь. Особые условия перевозки указаны в приложенных документах."
   },
   {
-    theme: "Грузоперевозки Волгоград - Астрахань",
-    date: new Date('2024-03-08T11:10:00'),
-    from: 'volgograd.cargo@volga.ru',
-    to: 'astrakhan.logistics@caspiy.com',
-    attachments: 2
+    "subject": "Грузоперевозки Волгоград - Астрахань",
+    "date": new Date('2024-03-08T11:10:00'),
+    "from": "volgograd.cargo@volga.ru",
+    "to": "astrakhan.logistics@caspiy.com",
+    "fromName": "Дмитриев Антон Павлович",
+    "toName": "Орлова Надежда Владимировна",
+    "attachments": 2,
+    "text": "Предлагаем вам сотрудничество по грузоперевозкам по маршруту Волгоград-Астрахань. Наши тарифы и условия прилагаются."
   },
   {
-    theme: "Доставка медицинских препаратов Москва - Иркутск",
-    date: new Date('2024-04-25T09:45:00'),
-    from: 'pharma@med-delivery.ru',
-    to: 'irkutsk.hospital@health.gov',
-    attachments: 4
+    "subject": "Доставка медицинских препаратов Москва - Иркутск",
+    "date": new Date('2024-04-25T09:45:00'),
+    "from": "pharma@med-delivery.ru",
+    "to": "irkutsk.hospital@health.gov",
+    "fromName": "Фролов Артем Денисович",
+    "toName": "Власова Мария Андреевна",
+    "attachments": 4,
+    "text": "Срочная поставка медицинских препаратов в Иркутск будет выполнена в соответствии с договоренностями. Документы прилагаются."
   },
   {
-    theme: "Перевозка электроники Санкт-Петербург - Тюмень",
-    date: new Date('2024-05-17T13:20:00'),
-    from: 'electronics@spb-tech.ru',
-    to: 'tyumen.store@digital.com',
-    attachments: 6
+    "subject": "Перевозка электроники Санкт-Петербург - Тюмень",
+    "date": new Date('2024-05-17T13:20:00'),
+    "from": "electronics@spb-tech.ru",
+    "to": "tyumen.store@digital.com",
+    "fromName": "Гусев Денис Олегович",
+    "toName": "Мартынова Анастасия Игоревна",
+    "attachments": 6,
+    "text": "Уважаемые коллеги, информируем вас об отправке партии электроники в Тюмень 20 мая. Особые условия транспортировки указаны в приложении."
   },
   {
-    theme: "Доставка книг Москва - Омск",
-    date: new Date('2024-06-09T10:05:00'),
-    from: 'book.delivery@lib.ru',
-    to: 'omsk.library@culture.gov',
-    attachments: 1
+    "subject": "Доставка книг Москва - Омск",
+    "date": new Date('2024-06-09T10:05:00'),
+    "from": "book.delivery@lib.ru",
+    "to": "omsk.library@culture.gov",
+    "fromName": "Тарасова Людмила Викторовна",
+    "toName": "Семенов Илья Александрович",
+    "attachments": 1,
+    "text": "Уведомляем о доставке партии книг в Омскую областную библиотеку. Груз будет отправлен 15 июня."
   },
   {
-    theme: "Транспортировка сельхозтехники Ростов - Ставрополь",
-    date: new Date('2024-07-22T14:50:00'),
-    from: 'agro.tech@rostov-agro.ru',
-    to: 'stavropol.farm@agro.com',
-    attachments: 7
+    "subject": "Транспортировка сельхозтехники Ростов - Ставрополь",
+    "date": new Date('2024-07-22T14:50:00'),
+    "from": "agro.tech@rostov-agro.ru",
+    "to": "stavropol.farm@agro.com",
+    "fromName": "Кузьмин Василий Сергеевич",
+    "toName": "Борисова Анна Дмитриевна",
+    "attachments": 7,
+    "text": "Просим организовать транспортировку сельскохозяйственной техники в Ставропольский край. Подробные спецификации прилагаются."
   },
   {
-    theme: "Грузоперевозки Ярославль - Кострома",
-    date: new Date('2024-08-11T08:30:00'),
-    from: 'yaroslavl.trans@yar.ru',
-    to: 'kostroma.logistics@central.ru',
-    attachments: 3
+    "subject": "Грузоперевозки Ярославль - Кострома",
+    "date": new Date('2024-08-11T08:30:00'),
+    "from": "yaroslavl.trans@yar.ru",
+    "to": "kostroma.logistics@central.ru",
+    "fromName": "Александров Кирилл Игоревич",
+    "toName": "Миронова Елена Васильевна",
+    "attachments": 3,
+    "text": "Предлагаем услуги по грузоперевозкам между Ярославлем и Костромой. Наши преимущества и тарифы указаны в приложении."
   },
   {
-    theme: "Доставка одежды Москва - Красноярск",
-    date: new Date('2024-09-05T16:25:00'),
-    from: 'fashion.delivery@cloth.ru',
-    to: 'krasnoyarsk.store@fashion.com',
-    attachments: 5
+    "subject": "Доставка одежды Москва - Красноярск",
+    "date": new Date('2024-09-05T16:25:00'),
+    "from": "fashion.delivery@cloth.ru",
+    "to": "krasnoyarsk.store@fashion.com",
+    "fromName": "Полякова Алина Сергеевна",
+    "toName": "Сергеев Дмитрий Олегович",
+    "attachments": 5,
+    "text": "Уважаемые партнеры, подтверждаем заказ на доставку новой коллекции одежды в Красноярск. Отгрузка запланирована на 10 сентября."
   },
   {
-    theme: "Перевозка бытовой техники Казань - Ульяновск",
-    date: new Date('2024-10-19T12:15:00'),
-    from: 'home.appliances@kazan-tech.ru',
-    to: 'ulyanovsk.electronics@dom.ru',
-    attachments: 4
+    "subject": "Перевозка бытовой техники Казань - Ульяновск",
+    "date": new Date('2024-10-19T12:15:00'),
+    "from": "home.appliances@kazan-tech.ru",
+    "to": "ulyanovsk.electronics@dom.ru",
+    "fromName": "Гарифуллин Рамиль Ильдарович",
+    "toName": "Иванова Ольга Николаевна",
+    "attachments": 4,
+    "text": "Информируем о готовности партии бытовой техники к отправке в Ульяновск. Просим подтвердить готовность к приему груза 25 октября."
   },
   {
-    theme: "Доставка спортивного инвентаря Москва - Владимир",
-    date: new Date('2024-11-30T10:40:00'),
-    from: 'sport.goods@fit.ru',
-    to: 'vladimir.gym@sport.gov',
-    attachments: 2
+    "subject": "Доставка спортивного инвентаря Москва - Владимир",
+    "date": new Date('2024-11-30T10:40:00'),
+    "from": "sport.goods@fit.ru",
+    "to": "vladimir.gym@sport.gov",
+    "fromName": "Тихомиров Артем Владимирович",
+    "toName": "Крылов Антон Сергеевич",
+    "attachments": 2,
+    "text": "Уведомляем о доставке спортивного инвентаря во Владимир 5 декабря. Пожалуйста, обеспечьте приемку груза."
   },
   {
-    theme: "Транспортировка металлопроката Магнитогорск - Челябинск",
-    date: new Date('2024-12-14T09:20:00'),
-    from: 'metal.transport@mmk.ru',
-    to: 'chel.metall@industry.com',
-    attachments: 6
+    "subject": "Транспортировка металлопроката Магнитогорск - Челябинск",
+    "date": new Date('2024-12-14T09:20:00'),
+    "from": "metal.transport@mmk.ru",
+    "to": "chel.metall@industry.com",
+    "fromName": "Лазарев Михаил Андреевич",
+    "toName": "Шестакова Юлия Владимировна",
+    "attachments": 6,
+    "text": "Просим организовать транспортировку металлопроката из Магнитогорска в Челябинск. Особые условия перевозки указаны в приложении."
   },
   {
-    theme: "Грузоперевозки Тверь - Смоленск",
-    date: new Date('2025-01-08T11:55:00'),
-    from: 'tver.cargo@central.ru',
-    to: 'smolensk.logistics@west.com',
-    attachments: 3
+    "subject": "Грузоперевозки Тверь - Смоленск",
+    "date": new Date('2025-01-08T11:55:00'),
+    "from": "tver.cargo@central.ru",
+    "to": "smolensk.logistics@west.com",
+    "fromName": "Медведев Игорь Анатольевич",
+    "toName": "Соловьева Наталья Игоревна",
+    "attachments": 3,
+    "text": "Предлагаем услуги по грузоперевозкам между Тверью и Смоленском. Наши условия и тарифы прилагаются к письму."
   },
   {
-    theme: "Доставка игрушек Москва - Белгород",
-    date: new Date('2025-02-22T15:10:00'),
-    from: 'toys.delivery@kidshop.ru',
-    to: 'belgorod.store@children.com',
-    attachments: 4
+    "subject": "Доставка игрушек Москва - Белгород",
+    "date": new Date('2025-02-22T15:10:00'),
+    "from": "toys.delivery@kidshop.ru",
+    "to": "belgorod.store@children.com",
+    "fromName": "Козлова Екатерина Викторовна",
+    "toName": "Белов Андрей Дмитриевич",
+    "attachments": 4,
+    "text": "Уважаемые партнеры, подтверждаем заказ на доставку партии игрушек в Белгород. Отгрузка запланирована на 1 марта."
   },
   {
-    theme: "Перевозка химических веществ Дзержинск - Нижний Новгород",
-    date: new Date('2025-03-17T13:45:00'),
-    from: 'chem.transport@dzr.ru',
-    to: 'nn.chemicals@industry.gov',
-    attachments: 7
+    "subject": "Перевозка химических веществ Дзержинск - Нижний Новгород",
+    "date": new Date('2025-03-17T13:45:00'),
+    "from": "chem.transport@dzr.ru",
+    "to": "nn.chemicals@industry.gov",
+    "fromName": "Павлов Денис Сергеевич",
+    "toName": "Романова Виктория Александровна",
+    "attachments": 7,
+    "text": "Просим организовать специальную перевозку химических веществ с соблюдением всех мер безопасности. Инструкции прилагаются."
   },
   {
-    theme: "Доставка алкогольной продукции Краснодар - Ростов",
-    date: new Date('2025-04-05T10:30:00'),
-    from: 'wine.delivery@kuban.ru',
-    to: 'rostov.bar@restaurant.com',
-    attachments: 5
+    "subject": "Доставка алкогольной продукции Краснодар - Ростов",
+    "date": new Date('2025-04-05T10:30:00'),
+    "from": "wine.delivery@kuban.ru",
+    "to": "rostov.bar@restaurant.com",
+    "fromName": "Морозов Сергей Владимирович",
+    "toName": "Зайцева Анастасия Игоревна",
+    "attachments": 5,
+    "text": "Уведомляем о готовности партии алкогольной продукции к отправке в Ростов. Необходимые лицензии и документы прилагаются."
   },
   {
-    theme: "Транспортировка зерна Воронеж - Липецк",
-    date: new Date('2025-05-19T08:15:00'),
-    from: 'grain.transport@agro-vrn.ru',
-    to: 'lipetsk.mill@agro.com',
-    attachments: 3
+    "subject": "Транспортировка зерна Воронеж - Липецк",
+    "date": new Date('2025-05-19T08:15:00'),
+    "from": "grain.transport@agro-vrn.ru",
+    "to": "lipetsk.mill@agro.com",
+    "fromName": "Калинин Алексей Николаевич",
+    "toName": "Семенова Ольга Дмитриевна",
+    "attachments": 3,
+    "text": "Просим организовать транспортировку партии зерна в Липецк. Особые условия хранения груза указаны в приложении."
   },
   {
-    theme: "Грузоперевозки Пенза - Саратов",
-    date: new Date('2025-06-12T14:20:00'),
-    from: 'penza.cargo@volga.ru',
-    to: 'saratov.logistics@volgograd.com',
-    attachments: 2
+    "subject": "Грузоперевозки Пенза - Саратов",
+    "date": new Date('2025-06-12T14:20:00'),
+    "from": "penza.cargo@volga.ru",
+    "to": "saratov.logistics@volgograd.com",
+    "fromName": "Герасимов Артем Викторович",
+    "toName": "Куликова Мария Сергеевна",
+    "attachments": 2,
+    "text": "Предлагаем услуги по грузоперевозкам между Пензой и Саратовом. Наши преимущества и тарифы указаны в приложении."
   },
   {
-    theme: "Доставка косметики Москва - Тула",
-    date: new Date('2025-07-25T11:05:00'),
-    from: 'cosmetic.delivery@beauty.ru',
-    to: 'tula.store@cosmetics.com',
-    attachments: 6
+    "subject": "Доставка косметики Москва - Тула",
+    "date": new Date('2025-07-25T11:05:00'),
+    "from": "cosmetic.delivery@beauty.ru",
+    "to": "tula.store@cosmetics.com",
+    "fromName": "Орлова Дарья Андреевна",
+    "toName": "Федоров Иван Сергеевич",
+    "attachments": 6,
+    "text": "Уважаемые партнеры, подтверждаем заказ на доставку новой партии косметики в Тулу. Отгрузка запланирована на 1 августа."
   },
   {
-    theme: "Перевозка мебели Иваново - Ярославль",
-    date: new Date('2025-08-09T16:50:00'),
-    from: 'furniture.transport@ivanovo.ru',
-    to: 'yaroslavl.store@home.com',
-    attachments: 4
+    "subject": "Перевозка мебели Иваново - Ярославль",
+    "date": new Date('2025-08-09T16:50:00'),
+    "from": "furniture.transport@ivanovo.ru",
+    "to": "yaroslavl.store@home.com",
+    "fromName": "Соколов Антон Михайлович",
+    "toName": "Петрова Елена Владимировна",
+    "attachments": 4,
+    "text": "Просим организовать перевозку мебели из Иваново в Ярославль. Особые условия транспортировки указаны в приложении."
   },
   {
-    theme: "Доставка стройматериалов Москва - Брянск",
-    date: new Date('2025-09-30T09:35:00'),
-    from: 'build.mat@stroy.ru',
-    to: 'bryansk.remont@dom.com',
-    attachments: 5
+    "subject": "Доставка стройматериалов Москва - Брянск",
+    "date": new Date('2025-09-30T09:35:00'),
+    "from": "build.mat@stroy.ru",
+    "to": "bryansk.remont@dom.com",
+    "fromName": "Кузнецов Дмитрий Алексеевич",
+    "toName": "Смирнова Анастасия Олеговна",
+    "attachments": 5,
+    "text": "Уведомляем о готовности строительных материалов к отправке в Брянск. Просим подтвердить готовность к приему груза 5 октября."
   },
   {
-    theme: "Транспортировка автомобилей Набережные Челны - Ульяновск",
-    date: new Date('2025-10-14T12:40:00'),
-    from: 'car.transport@kamaz.ru',
-    to: 'ulyanovsk.dealer@auto.com',
-    attachments: 8
+    "subject": "Транспортировка автомобилей Набережные Челны - Ульяновск",
+    "date": new Date('2025-10-14T12:40:00'),
+    "from": "car.transport@kamaz.ru",
+    "to": "ulyanovsk.dealer@auto.com",
+    "fromName": "Хасанов Рамиль Фаритович",
+    "toName": "Волков Артем Игоревич",
+    "attachments": 8,
+    "text": "Просим организовать транспортировку партии автомобилей в Ульяновск. Все необходимые документы и спецификации прилагаются."
   }
 ]

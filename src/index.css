@@ -12,3 +12,25 @@ body {
   display: flex;
   place-items: center;
 }
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+/* Дорожка (фон) scrollbar */
+::-webkit-scrollbar-track {
+  background: #D2D2D2;
+  border-radius: 0.375rem;
+}
+
+/* Ползунок (движущаяся часть) */
+::-webkit-scrollbar-thumb {
+  background: #3182CE;
+  border-radius: 0.375rem;
+}
+
+/* Ползунок при наведении */
+::-webkit-scrollbar-thumb:hover {
+  background: #3182CE;
+}

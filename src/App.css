@@ -6,6 +6,10 @@
   font-size: 16px;
 }
 
+body {
+  --ag-row-hover-color: #E2F5FF;
+}
+
 #root {
   width: 100vw;
   height: 100vh;

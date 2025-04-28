@@ -1,0 +1,14 @@
+.email-select-checkbox {
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #1C1D1E;
+}
+
+.email-select-checkbox svg {
+    width: 0.75rem;
+}
+
+.email-select-checkbox[data-state="checked"] {
+    border: none;
+    background-color: #3182CE;
+}

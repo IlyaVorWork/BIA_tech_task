@@ -1,0 +1,56 @@
+.dayButtonWrapper {
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.dayButton {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.125rem;
+    color: #7B7B7B;
+}
+
+.leftEdge, .rightEdge {
+    border: 2px solid #3182CE;
+    border-radius: 0.625rem;
+}
+
+.today {
+    background-color: #7B7B7B;
+    color: #FFFFFF;
+    border-radius: 0.625rem;
+}
+
+.selected {
+    background-color: #dcf2ff;
+    border-radius: 0;
+}
+
+.selected::after {
+    content: "";
+    width: 0.5rem;
+    height: 100%;
+    position: absolute;
+    background-color: #dcf2ff;
+    right: -0.5rem;
+}
+
+.selected:has(.dayButton.rightEdge)::after {
+    display: none;
+}
+
+.sunday::after {
+    display: none;
+}
+
+.dayButtonWrapper:has(.dayButton.leftEdge), .monday {
+    border-bottom-left-radius: 0.625rem;
+    border-top-left-radius: 0.625rem;
+}
+
+.dayButtonWrapper:has(.dayButton.rightEdge), .sunday {
+    border-bottom-right-radius: 0.625rem;
+    border-top-right-radius: 0.625rem;
+}

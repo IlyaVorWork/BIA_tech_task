@@ -1,0 +1,9 @@
+.date-cell {
+    --date-highlight-bg-color: #F4F4F4;
+    --date-highlight-color: #7B7B7B;
+}
+
+.ag-row-hover .date-cell {
+    --date-highlight-bg-color: transparent;
+    --date-highlight-color: #3182CE;
+}

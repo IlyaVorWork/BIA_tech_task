@@ -13,7 +13,7 @@ const Header: FunctionComponent = () => {
           <Heading fontSize={"1.25rem"}>Контрагент ООО «Яндекс»</Heading>
         </Box>
         <Input variant={"outline"} size={"xl"} color={"#7B7B7B"} border={"1px solid #E2E8F0"}
-               bg={"rgb(255, 255, 255)"}
+               bg={"#FFFFFF"}
                height={"3.25rem"}
                padding={"0 1rem"}
                placeholder={"Поиск по контактам, ключевым словам и темам"}/>
