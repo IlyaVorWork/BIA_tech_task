@@ -1,6 +1,6 @@
 import './App.css'
 import {Stack} from "@chakra-ui/react";
-import Header from "@/components/Header.tsx";
+import Header from "@/components/header/Header.tsx";
 import EmailGrid from "@/components/emailGrid/EmailGrid.tsx";
 import {useState} from "react";
 import {Email, mockEmails} from "@/types/Email.ts";
@@ -16,7 +16,7 @@ function App() {
   return (
     <Stack width={"100%"} height={"100%"} gap={"1.25rem"}>
       <Header/>
-      {!selectedEmail && <EmailGrid rowsData={emailData} setSelectedEmail={setSelectedEmail} />}
+      {/*!selectedEmail && <EmailGrid rowsData={emailData} setSelectedEmail={setSelectedEmail} /> */}
       {selectedEmail &&
         <Stack direction={"row"} gap={"0.75rem"} height={"calc(100% - 6rem)"}>
           <Sidebar emails={emailData} onBackButtonClick={() => setSelectedEmail(null)} />
