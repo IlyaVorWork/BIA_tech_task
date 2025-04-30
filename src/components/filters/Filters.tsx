@@ -1,8 +1,9 @@
 import {FunctionComponent} from "react";
-import {Button, Stack, Text} from "@chakra-ui/react";
+import {Button, Checkbox, Stack, Text, Wrap} from "@chakra-ui/react";
 import EmailFilterSelector from "@/components/filters/EmailFilterSelector/EmailFilterSelector.tsx";
 import {Email} from "@/types/Email.ts";
 import DateFilterSelector from "@/components/filters/DateFilterSelector/DateFilterSelector.tsx";
+import styles from "./Filters.module.css"
 
 interface FiltersProps {
   emails: Email[];
@@ -11,8 +12,8 @@ interface FiltersProps {
 
 const Filters: FunctionComponent<FiltersProps> = ({emails, onBackButtonClick}) => {
   return (
-    <Stack gap={"0.75rem"} width={"36rem"} height={"10rem"}>
-      <Text width={"fit-content"} cursor={"pointer"} fontSize={"1.125rem"} color={"#a6a6a6"}
+    <Stack className={styles.filtersContainer}>
+      <Text cursor={"pointer"} fontSize={"1.125rem"} color={"#a6a6a6"}
             onClick={() => onBackButtonClick()}>← Вернуться ко всем письмам</Text>
       <Stack direction={"row"} height={"1.5rem"} justifyContent={"space-between"}>
         <Text fontSize={"1.125rem"} color={"#a6a6a6"}>Фильтры</Text>
@@ -20,13 +21,20 @@ const Filters: FunctionComponent<FiltersProps> = ({emails, onBackButtonClick}) =
                 fontSize={"0.75rem"}
                 height={"100%"}>Скрыть</Button>
       </Stack>
-      <Stack direction={"row"} gap={"0.5rem"}>
+      <Wrap className={styles.filters}>
         <EmailFilterSelector
           emails={Array.from(new Set(emails.map(email => email.to)))}
           variant={"to"}/>
         <EmailFilterSelector emails={Array.from(new Set(emails.map(email => email.from)))} variant={"from"}/>
-      </Stack>
-      <DateFilterSelector/>
+        <DateFilterSelector/>
+        <Checkbox.Root colorPalette={"blue"} height={"1.25rem"}>
+          <Checkbox.HiddenInput/>
+          <Checkbox.Control border={"2px solid #FFFFFF"}>
+            <Checkbox.Indicator/>
+          </Checkbox.Control>
+          <Checkbox.Label><Text color={"#FFFFFF"} fontSize={"0.875rem"}>Вложения</Text></Checkbox.Label>
+        </Checkbox.Root>
+      </Wrap>
     </Stack>
   )
 }

@@ -11,8 +11,8 @@ interface EmailChainProps {
 
 const EmailChain: FunctionComponent<EmailChainProps> = ({selectedEmail}) => {
   return (
-    <Stack gap={"0.75rem"} width={"100%"} height={"100%"}>
-      <Box width={"100%"} height={"calc(100% - 2.75rem)"} bg={"#ffffff"} borderRadius={"0.75rem"}
+    <Stack flex={"1"} minWidth={"40rem"} gap={"0.75rem"} height={"100%"}>
+      <Box height={"calc(100% - 2.75rem)"} bg={"#ffffff"} borderRadius={"0.75rem"}
            paddingRight={"0.75rem"} paddingTop={"0.75rem"} paddingBottom={"0.75rem"}>
         <Stack flex={1} height={"100%"} paddingLeft={"0.75rem"}
                paddingRight={"0.75rem"} overflowY={"auto"}>

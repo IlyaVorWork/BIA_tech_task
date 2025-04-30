@@ -8,6 +8,7 @@ import EmailAddressCell from "@/components/EmailAddressCell.tsx";
 import AttachmentHeader from "@/components/AttachmentHeader.tsx";
 import {ColDef} from "ag-grid-community"
 import "./EmailGrid.css"
+import {Stack} from "@chakra-ui/react";
 
 interface EmailGridProps {
   rowsData: Email[];
@@ -60,7 +61,7 @@ const EmailGrid: FunctionComponent<EmailGridProps> = ({rowsData, setSelectedEmai
   ]);
 
   return (
-    <>
+    <Stack gap={"1rem"} height={"calc(100% - 5.75rem)"}>
       <AgGridReact
         ref={gridRef}
         rowData={rowsData}
@@ -77,7 +78,7 @@ const EmailGrid: FunctionComponent<EmailGridProps> = ({rowsData, setSelectedEmai
       <EmailPagination count={rowsData.length} pageSize={14} defaultPage={1} onPageChange={(details) => {
         gridRef.current!.api.paginationGoToPage(details.page - 1);
       }}/>
-    </>
+    </Stack>
   )
 }
 

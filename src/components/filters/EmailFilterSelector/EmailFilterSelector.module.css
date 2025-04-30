@@ -1,0 +1,9 @@
+.emailFilterSelector {
+    width: calc(50% - 0.3125rem);
+}
+
+@container sidebar (width < 25rem) {
+    .emailFilterSelector {
+        width: 100%;
+    }
+}

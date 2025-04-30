@@ -13,7 +13,7 @@ const EmailChainFirstItem:FunctionComponent<EmailChainFirstItemProps> = ({email}
     <Stack height={"min-content"} gap={"0.75rem"} borderRadius={"0.75rem"} color={"#1C1D1E"}>
       <Stack direction={"row"} gap={"0.75rem"} justifyContent={"space-between"}>
         <Text fontSize={"1.375rem"} fontWeight={"500"}>{email.subject}</Text>
-        <Box fontSize={"0.75rem"} height={"min-content"} padding={"0.25rem 0.5rem"} bg={"#F4F4F4"} borderRadius={"0.375rem"}>
+        <Box fontSize={"0.75rem"} flexShrink={"0"} width={"7.25rem"} textAlign={"center"} height={"min-content"} padding={"0.25rem 0.5rem"} bg={"#F4F4F4"} borderRadius={"0.375rem"}>
           {format(email.date, "dd.MM.yyyy HH:mm")}
         </Box>
       </Stack>
@@ -35,7 +35,7 @@ const EmailChainFirstItem:FunctionComponent<EmailChainFirstItemProps> = ({email}
           <Attachment />
         ))}
       </Wrap>
-      <Text fontSize={"0.875rem"} textAlign={"justify"}>{email.text}</Text>
+      <Text fontSize={"0.875rem"} maxHeight={"13rem"} overflowY={"auto"}>{email.text}</Text>
     </Stack>
   )
 }

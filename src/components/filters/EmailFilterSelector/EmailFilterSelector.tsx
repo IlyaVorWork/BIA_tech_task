@@ -1,6 +1,7 @@
 import {createListCollection, Portal, Select} from "@chakra-ui/react";
 import {FunctionComponent} from "react";
 import EmailFilterWindow from "@/components/filters/EmailFilterWindow/EmailFilterWindow.tsx";
+import styles from "./EmailFilterSelector.module.css"
 
 interface EmailFilterProps {
   emails: string[];
@@ -18,7 +19,7 @@ const EmailFilterSelector: FunctionComponent<EmailFilterProps> = ({emails, varia
   })
 
   return (
-    <Select.Root variant={"outline"} collection={items} positioning={{ placement: "bottom", offset: {mainAxis: -40, crossAxis: 10} }}>
+    <Select.Root className={styles.emailFilterSelector} variant={"outline"} collection={items} positioning={{ placement: "bottom", offset: {mainAxis: -40, crossAxis: 10} }}>
       <Select.HiddenSelect/>
       <Select.Control>
         <Select.Trigger fontSize={"0.875rem"} borderRadius={"0.375rem"} padding={"0.375rem 0.75rem"} color={"#7B7B7B"}

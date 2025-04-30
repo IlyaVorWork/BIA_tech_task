@@ -28,7 +28,7 @@ const EmailChainItem:FunctionComponent<EmailChainItemProps> = ({email}) => {
             <Text fontSize={"0.875rem"} color={"#7B7B7B"}>{email.toName}</Text>
           </Stack>
         </Stack>
-        <Box fontSize={"0.75rem"} height={"min-content"} padding={"0.25rem 0.5rem"} bg={"#F4F4F4"} borderRadius={"0.375rem"}>
+        <Box fontSize={"0.75rem"} flexShrink={"0"} width={"7.25rem"} height={"min-content"} padding={"0.25rem 0.5rem"} bg={"#F4F4F4"} borderRadius={"0.375rem"}>
           {format(email.date, "dd.MM.yyyy HH:mm")}
         </Box>
       </Stack>
@@ -37,7 +37,7 @@ const EmailChainItem:FunctionComponent<EmailChainItemProps> = ({email}) => {
           <Attachment />
         ))}
       </Wrap>
-      <Text fontSize={"0.875rem"} textAlign={"justify"}>{email.text}</Text>
+      <Text fontSize={"0.875rem"} maxHeight={"13rem"} overflowY={"auto"}>{email.text}</Text>
     </Stack>
   )
 }

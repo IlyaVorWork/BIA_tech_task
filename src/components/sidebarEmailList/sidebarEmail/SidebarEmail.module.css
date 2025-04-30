@@ -1,8 +1,8 @@
-.sidebar-email {
-    flex: 1;
-    max-width: 35rem;
+.sidebarEmail {
+    position: relative;
+    flex-direction: column;
+    gap: 0.375rem !important;
     font-weight: 400;
-    font-size: 0.875rem;
     color: #7B7B7B;
     background-color: #FFFFFF;
     border-radius: 0.375rem;
@@ -11,21 +11,38 @@
     transition: all 0.2s ease-in-out;
 }
 
-.sidebar-email:hover {
+.sidebarEmail p {
+    font-size: 0.875rem;
+    color: #3182CE;
+}
+
+.sidebarEmail:hover {
     background-color: #E2F5FF;
     color: #1C1D1E;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
 
-.sidebar-email.selected {
+.sidebarEmail.selected {
     background-color: #E2F5FF;
-    color: #1C1D1E !important;
     height: auto;
     transition: all 0.2s ease-in-out;
 }
 
-.sidebar-email-text {
+.sidebarEmail.selected .sidebarEmailContent p {
+    color: #1C1D1E;
+}
+
+.sidebarEmailContent {
+    flex-direction: column;
+    gap: 0 !important;
+}
+
+.sidebarEmailContent p {
+    color: #7B7B7B;
+}
+
+.sidebarEmailText {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -35,52 +52,56 @@
     transition: all 0.2s ease-in-out;
 }
 
-.sidebar-email.selected .sidebar-email-text {
+.sidebarEmail.selected .sidebarEmailText {
     white-space: normal;
     height: 2.75rem;
     transition: all 0.2s ease-in-out;
 }
 
-.sidebar-email-theme {
+.sidebarEmailTheme {
     font-weight: 500;
     transition: all 0.2s ease-in-out;
 }
 
-.sidebar-email:hover .sidebar-email-theme {
+.sidebarEmail:hover .sidebarEmailTheme {
     font-weight: 500;
     transition: all 0.2s ease-in-out;
 }
 
-.sidebar-email.selected .sidebar-email-theme {
+.sidebarEmail.selected .sidebarEmailTheme {
     font-weight: 700;
 }
 
-.sidebar-email-time {
+.sidebarEmailTime {
     transition: all 0.2s ease-in-out;
 }
 
-.sidebar-email:hover .sidebar-email-time {
+.sidebarEmail:hover .sidebarEmailTime {
     color: #3182CE;
     transition: all 0.2s ease-in-out;
 }
 
-.sidebar-email.selected .sidebar-email-time {
+.sidebarEmail.selected .sidebarEmailTime {
     color: #3182CE;
     transition: all 0.2s ease-in-out;
 }
 
-.more-icon {
+.moreIcon {
     font-size: 1.5rem;
     color: #1C1D1E;
 }
 
-.clip-icon {
+.clipIcon {
     transform: rotate(45deg);
     font-size: 1.25rem;
     transition: all 0.2s ease-in-out;
 }
 
-.sidebar-email:hover .clip-icon {
+.sidebarEmail:hover .clipIcon {
     color: #3182CE;
     transition: all 0.2s ease-in-out;
+}
+
+@container sidebar (width) {
+    
 }

@@ -1,6 +1,7 @@
 import {createListCollection, Portal, Select} from "@chakra-ui/react";
 import {FunctionComponent} from "react";
 import DateFilterWindow from "@/components/filters/DateFilterWindow/DateFilterWindow.tsx";
+import styles from "./DateFilterSelector.module.css"
 
 const DateFilterSelector: FunctionComponent = () => {
 
@@ -9,7 +10,7 @@ const DateFilterSelector: FunctionComponent = () => {
   })
 
   return (
-    <Select.Root width={"calc(50% - 0.25rem)"} variant={"outline"} collection={items}
+    <Select.Root className={styles.dateFilterSelector} variant={"outline"} collection={items}
                  positioning={{placement: "bottom", offset: {mainAxis: -40, crossAxis: 10}}}>
       <Select.HiddenSelect/>
       <Select.Control>

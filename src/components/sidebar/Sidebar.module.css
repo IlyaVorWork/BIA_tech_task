@@ -1,0 +1,8 @@
+.sidebar {
+    container-name: sidebar;
+    container-type: inline-size;
+
+    max-width: 35rem;
+    height: 100%;
+    flex: 1;
+}

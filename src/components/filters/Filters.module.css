@@ -1,0 +1,22 @@
+.filtersContainer {
+    gap: 0.75rem !important;
+    height: 10rem;
+}
+
+.filters {
+    flex-direction: row !important;
+    column-gap: 0.625rem !important;
+    row-gap: 0.375rem !important;
+    align-items: center;
+}
+
+@container sidebar (width < 25rem) {
+    .filtersContainer {
+        height: 15rem;
+    }
+
+    .filters {
+        flex-direction: column !important;
+        align-items: flex-start;
+    }
+}

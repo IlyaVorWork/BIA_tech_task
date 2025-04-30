@@ -1,5 +1,5 @@
 import {FunctionComponent} from "react";
-import {Box, Text, Input, Stack} from "@chakra-ui/react";
+import {Box, Input, Stack} from "@chakra-ui/react";
 import logo from "@/assets/logo.svg";
 import styles from "./Header.module.css";
 

@@ -1,0 +1,10 @@
+.sidebarEmailList {
+    gap: 0.75rem !important;
+    height: calc(100% - 10rem);
+}
+
+@container sidebar (width < 25rem) {
+    .sidebarEmailList {
+        height: calc(100% - 15rem);
+    }
+}

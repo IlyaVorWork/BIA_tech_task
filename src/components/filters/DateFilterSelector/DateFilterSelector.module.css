@@ -1,0 +1,9 @@
+.dateFilterSelector {
+    width: calc(50% - 0.25rem);
+}
+
+@container sidebar (width < 25rem) {
+    .dateFilterSelector {
+        width: 100%;
+    }
+}
