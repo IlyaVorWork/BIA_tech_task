@@ -19,3 +19,9 @@ body {
 .logo {
   height: 2.5rem;
 }
+
+.chakra-button:is([data-scope="pagination"]):hover {
+  background-color: #E2F5FF;
+  border: none;
+  color: #1C1D1E;
+}

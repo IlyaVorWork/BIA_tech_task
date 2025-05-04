@@ -1,0 +1,39 @@
+.checkboxRoot {
+    gap: 0.5rem;
+}
+
+.checkboxControl {
+    border: 2px solid;
+    width: 1rem;
+    height: 1rem;
+}
+
+.checkboxControl[data-state="checked"] {
+    border: none;
+    color: white;
+    background-color: #3182CE;
+}
+
+.black {
+    border-color: #000000;
+}
+
+.white {
+    border-color: #ffffff;
+}
+
+.checkboxLabel {
+    font-size: 0.875rem;
+}
+
+.black .checkboxLabel {
+    color: #000000;
+}
+
+.white .checkboxLabel {
+    color: #FFFFFF;
+}
+
+.checkboxIndicator {
+    width: 0.75rem;
+}

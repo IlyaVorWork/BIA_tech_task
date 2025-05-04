@@ -1,0 +1,22 @@
+.dateColumnHeader {
+    flex-direction: row !important;
+    gap: 0.75rem !important;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sortIcon {
+    font-size: 1.5rem;
+}
+
+.filterIcon {
+    font-size: 1.75rem;
+    color: #3182CE;
+}
+
+.filterPopover {
+    width: fit-content;
+    max-height: none;
+    background-color: transparent;
+    border-radius: 0.75rem;
+}
